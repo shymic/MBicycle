@@ -2,6 +2,9 @@
 
 **Quick API Integration and Insight Generation**
 
+ref link: https://ritualapp.notion.site/Data-Engineer-Home-Assignment-b4b1f791dc4e4166a8d48d57f49a734d
+
+
 **Objective:**
 Demonstrate your ability to quickly integrate with an external data source, perform basic ETL operations, and extract meaningful insights.
 
