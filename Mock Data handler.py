@@ -61,28 +61,28 @@ print(active_users)
 
 
 all_data_query ="""
-select
+SELECT 
 	s.sale_id
 	, s.user_id
 	, u.country
 	, u.signup_date
 	, s.sale_date
 	, s.sale_amount 
-from
+FROM
 	sale s
-join user u on
+JOIN user u ON
 	s.user_id = u.user_id 
 """
 df_all = pd.read_sql_query(all_data_query, conn)
 
 all_data_query ="""
-	select  
+	SELECT  
         user_id, strftime('%Y-%m', sale_date) AS month
-        , sum(sale_amount) as full_amount
-        , count(sale_amount) as number_of_sales
-	from sale
-	group by user_id, month
-	order by 4 desc, 3 desc
+        , sum(sale_amount) AS full_amount
+        , count(sale_amount) AS number_of_sales
+	FROM sale
+	GROUP BY user_id, month
+	ORDER BY 4 desc, 3 desc
 """
 df = pd.read_sql_query(all_data_query, conn)
 
