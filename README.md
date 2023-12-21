@@ -66,17 +66,26 @@ pip install -r requirements.txt
 
 3. Run the script:
 ```bash
-python process_data.py
+python API_handler.py
+python Mock_data_handler.py
 ```
 
 ## Configuration
 Ensure you have a stable internet connection to fetch data from the FreeToGame API.
 
 ## Script Details
+
+### API_handler
 The script fetches data from the FreeToGame API using the requests library.
 The data is validated against a predefined JSON schema using jsonschema.
 Valid and corrupted items are counted and printed.
 Valid items are processed and normalized using pandas.
+
+
+### Mock_data_handler
+
+The script fetches data from flat files and populates it to SQLite for next analysis.
+Analysis explains the most active users, the heighest number of sales. Also it explains varaity of sales per month and country. As a result you can see sales activity of company. 
 
 ## Error Handling
 The script handles HTTP request errors, schema validation errors, and unexpected errors gracefully.
